@@ -1,0 +1,443 @@
+@font-face {
+  font-family: 'Chomsky';
+  src: url('chomsky-font/Chomsky-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lodeh';
+  src: url('lodeh-regular/Lodeh-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Lodeh', 'Georgia', serif; /* Use Lodeh for the body text */
+  background-color: #f9f5e9;
+  background-image: url('https://www.transparenttextures.com/patterns/linen-white.png'); /* Subtle linen texture */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #333; /* Muted text color for vintage look */
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas: 
+    "header header header"
+    "sidebar sidebar sidebar"
+    "main main main"
+    "main main main"
+    "footer footer footer";
+  gap: 10px;
+  background-color: #f9f5e9;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/linen-white.png');
+  background-position: center;
+}
+
+/* Profile Section Styling */
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Profile Image - Vintage Filter */
+.profile-image {
+  width: 100%; 
+  height: auto; 
+  border-radius: 0%; 
+  border: 5px solid #ddd; 
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px; 
+  filter: sepia(50%) grayscale(80%);
+  transition: filter 0.5s ease; 
+}
+
+/* Hover Effect for Profile Image */
+.profile-image:hover {
+  filter: none; 
+}
+
+.profile-name {
+  text-align: center;
+  font-family: 'Chomsky', 'Georgia', serif;
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* Header Styling */
+.header {
+  grid-area: header;
+  background-color: #f9f5e9;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Chomsky', 'Georgia', serif;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #f9f5e9;
+  color: #333;
+  padding: 20px;
+  font-family: 'Georgia', serif;
+  border-radius: 20px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sidebar ul li {
+  padding: 5px 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: bold;
+  font-family: 'Chomsky', 'Georgia', serif;
+  font-size: 16px;
+}
+
+/* Main Content Area */
+.main-content {
+  grid-area: main;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 0px;
+  background-color: #f9f5e9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Rows */
+.main-row {
+  background-color: #f9f5e9;
+  padding: 20px;
+  color: #333;
+  font-family: 'Chomsky', 'Georgia', serif;
+  border-radius: 10px;
+  margin-top: 0px;
+}
+
+/* Nested grid for main-row 1 */
+.main-row-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+}
+
+.main-row-2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  margin-top: 0;
+}
+
+/* First Column in Main-Row 1 */
+.col1-main-row-1 {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 1px;
+}
+
+.col1-main-row-1 div {
+  background-color: #f9f5e9;
+  padding: 10px;
+  color: #333;
+  font-family: 'Chomsky', 'Georgia', serif;
+  border: 5px;
+}
+
+/* Second Column in Main-Row 1 */
+.col2-main-row-1 {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 10px;
+}
+
+.col2-main-row-1 div {
+  background-color: #f9f5e9;
+  padding: 15px;
+  color: #333;
+  font-family: 'Georgia', serif;
+}
+
+.blog-header h1 {
+  text-align: center;
+  font-family: 'Chomsky', 'Georgia', serif;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Footer Styling */
+.footer {
+  grid-area: footer;
+  background-color: #f9f5e9;
+  color: #000;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Chomsky', 'Georgia', serif;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Projects Section */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.project-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-item a {
+  text-decoration: none; /* This removes the underline */
+  color: inherit; /* Keep the original color */
+}
+
+.project-item a:hover {
+  color: #333; /* Optional: Change color on hover if desired */
+}
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.project-item h4 {
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Skills Section */
+.skills {
+  gap: 10px;
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  margin: 40px 0;
+  padding: 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2cqh;
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 2px;
+  height: 100%;
+  background: #d3bfa7;
+}
+
+.timeline-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #d3bfa7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.timeline-content {
+  background: none;
+  padding: 10px 20px;
+  font-family: 'Georgia', serif;
+  width: 100%;
+  position: relative;
+}
+
+.timeline-content h3 {
+  margin: 0 0 5px;
+  font-size: 1.8em;
+  color: #4a4a4a;
+  font-weight: normal;
+}
+
+.timeline-content span {
+  display: block;
+  font-size: 0.9em;
+  color: #7d7d7d;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 2px;
+  height: 100%;
+  background: #d3bfa7;
+}
+
+.timeline-item:last-child:before {
+  height: 50%;
+}
+
+/* Awards Section */
+.awards {
+  margin-top: 0px;
+}
+
+.awards h1 {
+  font-family: 'Chomsky', serif;
+  color: #333;
+  font-size: 2em;
+  text-align: start;
+}
+
+.awards ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.awards ul li {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.awards ul li i {
+  margin-right: 15px;
+  font-size: 1.5em;
+  color: #a98f64;
+}
+
+.awards ul li strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.blogs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.blog-thumbnail {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-thumbnail:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail-content {
+  padding: 20px;
+}
+
+.thumbnail-content h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.thumbnail-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.blog-heading {
+  text-align: left;
+  font-family: 'Chomsky', 'Georgia', serif; /* Keep the vintage aesthetic */
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.blog-thumbnail a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "sidebar"
+        "main"
+        "footer";
+  }
+
+  .sidebar {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  .footer {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  .main-row-1, .main-row-2 {
+      grid-template-columns: 1fr;
+  }
+}
